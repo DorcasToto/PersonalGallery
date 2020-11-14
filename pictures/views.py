@@ -3,4 +3,5 @@ from .models import Image
 
 # Create your views here.
 def pictures(request):
-    pass
+    pics = Image.objects.all()
+    return render(request,'photos.html',{'pics':pics})
