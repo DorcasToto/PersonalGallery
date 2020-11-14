@@ -8,20 +8,20 @@
 </head>
 
 <body>
-    <div class="">
+    <div class="" style="font-size: 20px; font-family: 'Itim', cursive;">
         {%extends 'base.html' %}
 
         {% block content %}
         {{block.super}}
         <h1 class='text-center'> My Gallery</h1> 
         {%for location in locations %}
-        <a href=""> {{location.locationName}}</a> 
+        <a href="{% url 'location' %}{{location.locationName}}"> {{location.locationName}}</a> 
         {%endfor%}
         <hr>
         <div class="container-fluid">
             <div class="row">
                 {%for pic in pics%}
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
 
                     <!--Card-->
                     <div class="card">
@@ -34,7 +34,7 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <p>Hey</p>
+                            <p>{{pic.imageDescription}}</p>
                         </div>
 
                     </div>
@@ -43,7 +43,7 @@
                     <!-- Modal -->
                     <div class="modal fade" id="picId{{pic.id}}" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-dialog .modal-dialog-scrollable" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">{{pic.imageName}}</h5>

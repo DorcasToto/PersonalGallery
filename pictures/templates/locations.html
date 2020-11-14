@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="">
+        {%extends 'base.html' %}
+
+        {% block content %}
+        {{block.super}}
+        <h1 class='text-center'> My Gallery</h1>
+        <hr>
+        <div class="container-fluid">
+            <div class="row">
+                {% for location in locations %}
+                <div class="col-md-3">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card image-->
+                        <div class="view overlay">
+                            <a>
+                                <img src="{{location.image.url}}" class="card-img-top img-responsive styled"" alt=" image"
+                                    width="100p">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p>Category: {{location.imageCategory}}</p>
+                                </div>
+                                <div class="col-sm"></div>
+                            </div>
+                            <p>Description: {{location.imageDescription}}</p>
+                        </div>
+
+                    </div>
+                </div>
+                {%endfor%}
+
+            </div>
+
+        </div>
+        {% endblock %}
+    </div>
+    <!-- Container -->
+</body>
+
+</html>
