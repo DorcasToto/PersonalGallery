@@ -9,7 +9,7 @@
 
 <body>
     <nav class="navbar navbar-dark default-color justify-content-between">
-        <a class="navbar-brand" href="#">Personal Gallery</a>
+        <a class="navbar-brand" href="{% url 'pictures' %}">Personal Gallery</a>
         <form class="form-inline my-1" role = "search" action="{% url 'search_results'%}">
             <div class="md-form form-sm my-0">
                 <input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search" name=category
