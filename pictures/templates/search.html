@@ -1,0 +1,67 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        {% if pictures%}
+        <h2>Found {{ pictures|length }} of searched term {{message}}</h2>
+        {% else %}
+        <h2> Found 0 picture category for the search term {{message}}</h2>
+        {% endif %}
+
+    </div>
+
+    <div class="row">
+        {%if pictures%}
+        {%for pic in pictures%}
+        <div class="col-md-3 mb-3">
+
+            <!--Card-->
+            <div class="card">
+
+                <!--Card image-->
+                <div class="view overlay">
+                    <a data-toggle="modal" data-target="#picId{{pic.id}}">
+                        <img src="{{pic.image.url}}" class="card-img-top img-responsive styled"" alt=" image"
+                            width="100p">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p>{{pic.imageDescription}}</p>
+                </div>
+
+            </div>
+            <!--/.Card-->
+
+            <!-- Modal -->
+            <div class="modal fade" id="picId{{pic.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog .modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{pic.imageName}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{pic.image.url}}" class="img-fluid" alt="image">
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-sm">Description: {{pic.imageDescription}}</div>
+                                <div class="col-sm">Location: {{pic.imageLocation}}</div>
+                            </div>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {%endfor%}
+        {%endif%}
+
+    </div>
+</div>
+{% endblock %}
