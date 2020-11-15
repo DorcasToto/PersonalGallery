@@ -15,7 +15,7 @@
         {{block.super}}
         <h1 class='text-center'> My Gallery</h1> 
         {%for location in locations %}
-        <a href="{% url 'location' %}{{location.locationName}}"> {{location.locationName}}</a> 
+        <a href="/location/{{location.locationName}}" class="pl-3"> {{location.locationName}}</a> 
         {%endfor%}
         <hr>
         <div class="container-fluid">
