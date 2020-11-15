@@ -10,8 +10,9 @@ class Location(models.Model):
     def deleteLocation(self):
         self.delete()
 
-    def updateLocation():
-        pass
+    @classmethod
+    def updateLocation(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
 
     def __str__(self):
         return self.locationName
@@ -26,8 +27,9 @@ class Category(models.Model):
     def deleteCategory(self):
         self.delete()
 
-    def updateCategory():
-        pass
+    @classmethod
+    def updateCategory(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
 
     def __str__(self):
         return self.categoryName
@@ -45,11 +47,14 @@ class Image(models.Model):
     def deleteImage(self):
         self.delete()
 
-    def updateImage():
-        pass
+    @classmethod
+    def updateImage(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
 
-    def getImagebyId(id):
-        pass
+    @classmethod
+    def getimageById(cls, id):
+        image = cls.objects.filter(id=id).all()
+        return image
     
     @classmethod
     def searchImage(cls,category):
