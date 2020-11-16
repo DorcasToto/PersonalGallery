@@ -6,6 +6,9 @@
 ## Description
 A personal gallery application that you display your photos for others to see.
 
+## Figma Design
+
+A link to my [figma design](https://www.figma.com/file/UNq2anH6uJd5N61DvW1J5M/Gallery?node-id=0%3A1)
 
 ## Setup and installations
 * Clone Project to your machine
