@@ -164,3 +164,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 django_heroku.settings(locals())
+
+#cloudinary
+#cloud name = dzvafknwk
+#Apikey = 792498396853217
+#secret = Dr-pc8vOEDpJ_8bXqx0t4GkVqSk
+
+cloudinary.config( 
+  cloud_name = "dzvafknwk", 
+  api_key = "792498396853217", 
+  api_secret = "Dr-pc8vOEDpJ_8bXqx0t4GkVqSk" 
+)
